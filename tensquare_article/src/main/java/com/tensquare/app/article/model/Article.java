@@ -16,15 +16,15 @@ import lombok.experimental.Accessors;
  * 文章
  * </p>
  *
- * @author dx
+ * @author freedom
  * @since 2022-03-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("tb_article")
-@ApiModel(value="Tb_articlePo对象", description="文章")
-public class Tb_articlePo implements Serializable {
+@ApiModel(value="Article对象", description="文章")
+public class Article implements Serializable {
 
     private static final long serialVersionUID=1L;
 

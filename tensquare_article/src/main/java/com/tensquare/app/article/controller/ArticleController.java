@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
  * 文章 前端控制器
  * </p>
  *
- * @author dx
+ * @author freedom
  * @since 2022-03-20
  */
 @RestController
-@RequestMapping("/tb-article-po")
-public class Tb_articleController {
+@RequestMapping("/article")
+public class ArticleController {
 
 }
 

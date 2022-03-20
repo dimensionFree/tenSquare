@@ -1,6 +1,6 @@
 package com.tensquare.app.article.dao;
 
-import com.tensquare.app.article.model.Tb_articlePo;
+import com.tensquare.app.article.model.Article;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 文章 Mapper 接口
  * </p>
  *
- * @author dx
+ * @author freedom
  * @since 2022-03-20
  */
-public interface Tb_articleMapper extends BaseMapper<Tb_articlePo> {
+public interface ArticleMapper extends BaseMapper<Article> {
 
 }

@@ -1,6 +1,6 @@
 package com.tensquare.app.article.service;
 
-import com.tensquare.app.article.model.Tb_articlePo;
+import com.tensquare.app.article.model.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -8,9 +8,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 文章 服务类
  * </p>
  *
- * @author dx
+ * @author freedom
  * @since 2022-03-20
  */
-public interface ITb_articleService extends IService<Tb_articlePo> {
+public interface IArticleService extends IService<Article> {
 
 }
