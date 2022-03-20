@@ -11,4 +11,10 @@ public class Result {
     private String message;
     private Object data;
 
+
+    public Result(Boolean flag, Integer code, String message) {
+        this.flag = flag;
+        this.code = code;
+        this.message = message;
+    }
 }

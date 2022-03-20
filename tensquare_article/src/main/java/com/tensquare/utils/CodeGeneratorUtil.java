@@ -31,13 +31,13 @@ class CodeGeneratorUtil {
         // 项目包路径
         String parent = "com.tensquare.app";
         // 数据库连接地址
-        String url = "jdbc:mysql://localhost:3306/tensquare_article?characterEncoding=utf-8";
+        String url = "jdbc:mysql://202.5.16.74:3307/tensquare_article?characterEncoding=utf-8";
         // 数据库驱动
         String driver = "com.mysql.jdbc.Driver";
         // 用户名
-        String user = "test";
+        String user = "root";
         // 密码
-        String pwd = "test";
+        String pwd = "kkkleaf";
 
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -93,21 +93,21 @@ class CodeGeneratorUtil {
     private static void setGlobalConfig(AutoGenerator mpg, String projectPath) {
         GlobalConfig gc = new GlobalConfig();
         gc.setOutputDir(projectPath);
-        gc.setAuthor("dx");
+        gc.setAuthor("freedom");
         gc.setOpen(false);
         gc.setIdType(IdType.ID_WORKER_STR);
         gc.setFileOverride(true);
         gc.setDateType(DateType.TIME_PACK);
         gc.setEnableCache(false);
         // %s 为占位符 可以指定生成文件的结尾形式 (Po、Entity、Model...)
-        gc.setEntityName("%sPo");
+//        gc.setEntityName("%sPo");
 
         gc.setMapperName("%sMapper");
         gc.setXmlName("%sMapper");
         gc.setServiceName("");
         gc.setServiceImplName("");
         gc.setControllerName("");
-         gc.setSwagger2(true); //实体属性 Swagger2 注解
+        gc.setSwagger2(true); //实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
     }
 
@@ -179,7 +179,7 @@ class CodeGeneratorUtil {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "\\tensquare_article\\src\\main\\resources\\mapper\\" + tableInfo.getName() + "Mapper.xml" + StringPool.DOT_XML;
+                return projectPath + "\\tensquare_article\\src\\main\\resources\\mapper\\" + tableInfo.getName().replace("tb_","") + "Mapper" + StringPool.DOT_XML;
             }
         });
 
@@ -206,8 +206,10 @@ class CodeGeneratorUtil {
      */
     private static void setStrategyConfig(AutoGenerator mpg, PackageConfig pc) {
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.no_change);
-        strategy.setColumnNaming(NamingStrategy.no_change);
+
+        strategy.setNaming(NamingStrategy.underline_to_camel);
+
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
 //        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
@@ -217,7 +219,7 @@ class CodeGeneratorUtil {
 //        strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
+        strategy.setTablePrefix("tb_");
         mpg.setStrategy(strategy);
     }
 
