@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("comment")
+@RequestMapping("/comment/")
 @CrossOrigin
 public class CommentController {
     @Autowired
@@ -49,4 +49,28 @@ public class CommentController {
         commentService.deleteById(id);
         return new Result(true, StatusCode.OK, "删除成功");
     }
+
+
+
+    //根据文章id查询评论列表
+    @RequestMapping(value = "{articleId}", method =
+            RequestMethod.GET)
+    public Result findByarticleId(@PathVariable String articleId) {
+        List<Comment> list =
+                commentService.findByarticleId(articleId);
+        return new Result(true, StatusCode.OK, "查询成功", list);
+    }
+
+
+
+
+    //评论点赞
+    @RequestMapping(value = "thumbup/{id}", method =
+            RequestMethod.PUT)
+    public Result thumbup(@PathVariable String id) {
+        return commentService.thumbup(id);
+
+    }
+
+
 }

@@ -7,3 +7,5 @@ spring:
     mongodb:
       database: commentdb
       host: localhost
+    redis:
+      host: localhost

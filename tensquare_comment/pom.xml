@@ -27,11 +27,19 @@
 <!--            <artifactId>mongodb-driver</artifactId>-->
 <!--            <version>3.10.1</version>-->
 <!--        </dependency>-->
-
+<!--      spring-boot-starter-data-mongodb已经包括了mongodb-driver，上面的依赖如果引入，会依赖冲突  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
+
+
+<!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
 
     </dependencies>
 
