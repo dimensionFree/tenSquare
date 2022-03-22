@@ -31,13 +31,13 @@ class CodeGeneratorUtil {
         // 项目包路径
         String parent = "com.tensquare.app";
         // 数据库连接地址
-        String url = "jdbc:mysql://202.5.16.74:3307/tensquare_article?characterEncoding=utf-8";
+        String url = "jdbc:mysql://localhost:3306/tensquare_article?characterEncoding=utf-8";
         // 数据库驱动
         String driver = "com.mysql.jdbc.Driver";
         // 用户名
         String user = "root";
         // 密码
-        String pwd = "kkkleaf";
+        String pwd = "root";
 
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
