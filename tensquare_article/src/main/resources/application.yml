@@ -5,7 +5,7 @@ spring:
     name: tensquare-article
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/tensquare_article?characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/tensquare_article?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
 # Mybatis-Plus 配置

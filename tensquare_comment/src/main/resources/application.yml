@@ -1,0 +1,9 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: tensquare-comment
+  data:
+    mongodb:
+      database: commentdb
+      host: localhost
